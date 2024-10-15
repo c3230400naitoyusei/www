@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>タヒチの写真</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: blue;
+        }
+    </style>
 </head>
 <body>
+
+    <h1>タヒチの写真</h1>
+    <!-- タヒチの写真をクリックすると関数photoInfo()が実行される -->
+    <img src="https://example.com/tahiti.jpg" alt="タヒチの美しい風景" onclick="photoInfo()">
     
+    <!-- メッセージが表示される要素 -->
+    <div id="message"></div>
+
+    <script>
+        // タヒチの写真をクリックした際に呼び出される関数
+        function photoInfo() {
+            const message = "タヒチは南太平洋に位置する美しい島です。";
+            // メッセージをHTMLに表示する
+            document.getElementById("message").innerText = message;
+        }
+    </script>
+
 </body>
 </html>
