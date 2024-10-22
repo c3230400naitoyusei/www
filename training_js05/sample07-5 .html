@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あああああ</title>
+    <title>配列計算</title>
+    <style>
+        /* テーブルのCSSの一例 */
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-   <h1>ええええええ</h1> 
+
+    <h1>配列計算</h1>
+    
+    <table>
+        <tr>
+            <th>配列a</th>
+            <th>配列b</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td>10</td>
+            <td><button onclick="multiply_0()">計算する</button></td>
+        </tr>
+        <tr>
+            <td>980</td>
+            <td>16</td>
+            <td><button onclick="multiply_1()">計算する</button></td>
+        </tr>
+        <tr>
+            <td>1200</td>
+            <td>8</td>
+            <td><button onclick="multiply_2()">計算する</button></td>
+        </tr>
+    </table>
+
+    <script>
+        // 配列aとbを定義
+        let a = [500, 980, 1200];
+        let b = [10, 16, 8];
+
+        // multiply_0関数: a[0] * b[0] の結果を表示
+        function multiply_0() {
+            let answer = a[0] * b[0];
+            alert("計算結果: " + answer);
+        }
+
+        // multiply_1関数: a[1] * b[1] の結果を表示
+        function multiply_1() {
+            let answer = a[1] * b[1];
+            alert("計算結果: " + answer);
+        }
+
+        // multiply_2関数: a[2] * b[2] の結果を表示
+        function multiply_2() {
+            let answer = a[2] * b[2];
+            alert("計算結果: " + answer);
+        }
+    </script>
+
 </body>
 </html>
