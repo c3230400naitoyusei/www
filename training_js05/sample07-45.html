@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>座席の予約</title>
+    <style>
+        #thankYouMessage {
+            display: none;
+            color: blue;
+        }
+        .reservation-status {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>座席の予約</h1>
+    <p>東京会場 <span id="reservationStatus" class="reservation-status">（予約受付中）</span></p>
+    <button id="reserveButton" onclick="reserveSeat()">予約する</button>
+    <p id="thankYouMessage">ありがとうございました。</p>
+
+    <script>
+        function reserveSeat() {
+            // 予約ステータスの変更
+            document.getElementById("reservationStatus").textContent = "（予約済み）";
+            // ボタンを非表示にする
+            document.getElementById("reserveButton").style.display = "none";
+            // ありがとうメッセージを表示する
+            document.getElementById("thankYouMessage").style.display = "block";
+        }
+    </script>
 </body>
 </html>
