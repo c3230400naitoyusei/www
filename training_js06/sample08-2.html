@@ -11,5 +11,11 @@
     <p>・S席（6000円）<button onclick="sale(6000)">20％　OFF</button></p>
     <p>・A席（4200円）<button onclick="sale(4200)">20％　OFF</button></p>
     <p>・B席（2800円）<button onclick="sale(2800)">20％　OFF</button></p>
+    <script>
+        function sale(price){
+            let salePrice = price * 0.8;
+            alert('割引後の価格は' + salePrice + '円です');
+        }
+    </script>
 </body>
 </html>
