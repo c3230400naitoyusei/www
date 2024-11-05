@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人口の多い国ランキング</title>
+    <style>
+        .country-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .country-item {
+            display: flex;
+            align-items: center;
+        }
+        .country-flag {
+            width: 50px;
+            height: 30px;
+            margin-right: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>人口の多い国ランキング</h1>
+    <ol class="country-list">
+        <li class="country-item">
+            <img src="/mnt/data/flag_CHN.png" alt="中国" class="country-flag" id="flag1">
+            <span id="country1">中国</span>
+        </li>
+        <li class="country-item">
+            <img src="/mnt/data/flag_IND.png" alt="インド" class="country-flag" id="flag2">
+            <span id="country2">インド</span>
+        </li>
+        <li class="country-item">
+            <img src="/mnt/data/flag_USA.png" alt="アメリカ" class="country-flag" id="flag3">
+            <span id="country3">アメリカ</span>
+        </li>
+        <li class="country-item">
+            <img src="/mnt/data/flag_IDN.png" alt="インドネシア" class="country-flag" id="flag4">
+            <span id="country4">インドネシア</span>
+        </li>
+    </ol>
+    <button onclick="toggleFlags()">国旗で表示</button>
+
+    <script>
+        function toggleFlags() {
+            for (let i = 1; i <= 4; i++) {
+                const flag = document.getElementById(`flag${i}`);
+                const country = document.getElementById(`country${i}`);
+                
+                if (flag.style.display === "none") {
+                    flag.style.display = "inline";
+                    country.style.display = "none";
+                } else {
+                    flag.style.display = "none";
+                    country.style.display = "inline";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
