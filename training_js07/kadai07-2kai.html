@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>要素の追加と削除</title>
+    <style>
+        .photo-list {
+            display: none;
+            margin-top: 10px;
+        }
+        .photo {
+            width: 200px;
+            height: auto;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>写真の一覧</h1>
+    <p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
+    <button id="showPhotosButton" onclick="showPhotos()">写真を表示</button>
+    <div id="photoList" class="photo-list"></div>
+
+    <script>
+        function showPhotos() {
+            const photoListHTML = `
+                <img src="photo_1.jpg" alt="Photo 1" class="photo">
+                <img src="photo_2.jpg" alt="Photo 2" class="photo">
+                <img src="photo_3.jpg" alt="Photo 3" class="photo">
+                <img src="photo_4.jpg" alt="Photo 4" class="photo">
+                <img src="photo_5.jpg" alt="Photo 5" class="photo">
+                <img src="photo_6.jpg" alt="Photo 6" class="photo">
+                <img src="photo_7.jpg" alt="Photo 7" class="photo">
+                <img src="photo_8.jpg" alt="Photo 8" class="photo">
+            `;
+            const photoList = document.getElementById('photoList');
+            photoList.insertAdjacentHTML('beforeend', photoListHTML);
+            photoList.style.display = 'block';
+            document.getElementById('showPhotosButton').remove();
+        }
+    </script>
+</body>
+</html>
