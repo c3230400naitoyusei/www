@@ -25,11 +25,14 @@
 
     <script>
         function check(x) {
-            if (x == 2 || x == 4) {
-                document.getElementById('message').textContent = '正解！';
-            } else {
-                document.getElementById('message').textContent = '間違い！';
-            }
+            // 正解となる値を配列で定義
+            const correctAnswers = [2, 4];
+
+            // 正解かどうかを判定し、結果を代入
+            const result = correctAnswers.includes(x) ? '正解！' : '間違い！';
+
+            // 結果を表示
+            document.getElementById('message').textContent = result;
         }
     </script>
 </body>
