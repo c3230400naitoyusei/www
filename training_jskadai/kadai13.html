@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>n～mで割り切れる数字</title>
 </head>
 <body>
-    
+    <h1>n～mで割り切れる数字</h1>
+    <p>1～10の好きな範囲で割り切れる最小の数値をJavaScriptで求めます。</p>
+    <button onclick="specifyRange()">範囲を指定</button>
+    <div id="result" style="margin-top: 10px; padding: 10px; background-color: #ffebcd;">ここに結果が表示されます。</div>
+
+    <script>
+        function specifyRange() {
+            let min = parseInt(prompt("範囲の最小値を1～10で入力してください", "1"));
+            if (isNaN(min) || min < 1 || min > 10) {
+                alert("最小値は1～10の範囲で入力してください。");
+                return;
+            }
+
+            let max = parseInt(prompt("範囲の最大値を1～10で入力してください", "10"));
+            if (isNaN(max) || max < min || max > 10) {
+                alert("最大値は最小値以上10以下で入力してください。");
+                return;
+            }
+
+            let result = findSmallestMultiple(min, max);
+            document.getElementById("result").innerText = 
+                `${min}～${max}で割り切れる最小の数値は${result}です。`;
+        }
+
+        function findSmallestMultiple(min, max) {
+            let number = max; // 最大値からスタート
+            while (true) {
+                let divisible = true;
+                for (let i = min; i <= max; i++) {
+                    if (number % i !== 0) {
+                        divisible = false;
+                        break;
+                    }
+                }
+                if (divisible) return number; // すべての数で割り切れる場合
+                number++;
+            }
+        }
+    </script>
 </body>
 </html>
