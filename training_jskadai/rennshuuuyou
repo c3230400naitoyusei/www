@@ -13,6 +13,10 @@
         #output {
             border: 1px solid black;
             padding: 10px;
+            margin: 20px 0; /* 上下に空間を作る */
+        }
+        #showHtmlButton {
+            margin: 20px 0; /* ボタンの上下に空間を作る */
         }
     </style>
 </head>
@@ -30,7 +34,6 @@
     </div>
 
     <button id="showHtmlButton">HTMLを表示</button>
-
     <div id="output">ここにHTMLが表示されます。</div>
 
     <script>
